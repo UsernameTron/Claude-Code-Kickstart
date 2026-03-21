@@ -42,5 +42,6 @@ Validation via `scripts/health-check.sh` after install.
 ## Current Status
 
 - **Version:** 1.0.0
-- **Files:** 194
+- **Files:** ~198
 - **Last updated:** 2026-03-21
+- **Docs:** README.md, docs/DEVOPS-HANDOFF.md, docs/architecture.md, docs/getting-started.md, docs/troubleshooting.md, docs/customization.md

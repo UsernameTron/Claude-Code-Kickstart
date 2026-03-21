@@ -193,6 +193,7 @@ See [docs/customization.md](docs/customization.md) for details.
 | [docs/troubleshooting.md](docs/troubleshooting.md) | Every failure mode + fixes |
 | [docs/customization.md](docs/customization.md) | How to adjust thresholds, hooks, etc. |
 | [docs/architecture.md](docs/architecture.md) | How the three agent systems compose |
+| [docs/DEVOPS-HANDOFF.md](docs/DEVOPS-HANDOFF.md) | DevOps handoff: install, config, security, tech debt |
 
 ---
 
