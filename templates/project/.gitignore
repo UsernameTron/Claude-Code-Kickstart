@@ -1,0 +1,39 @@
+# Claude Code internals
+state/
+context/
+outputs/
+plans/
+.claude/agent-memory/
+.claude/context/
+.claude/state/
+.claude/outputs/
+.claude/worktrees/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.benchmarks/
+venv/
+.venv/
+
+# JavaScript
+node_modules/
+dist/
+.cache/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
