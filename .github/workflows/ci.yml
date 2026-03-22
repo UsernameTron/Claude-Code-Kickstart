@@ -1,0 +1,110 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-suites:
+    name: "Test: ${{ matrix.suite }}"
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        suite:
+          - test_install
+          - test_health_check
+          - test_scaffold
+          - test_install_plugins
+          - test_integration
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run ${{ matrix.suite }}
+        run: bash tests/${{ matrix.suite }}.sh
+
+  validate-json:
+    name: Validate JSON
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate all JSON files
+        run: |
+          status=0
+          while IFS= read -r f; do
+            if ! python3 -m json.tool "$f" > /dev/null 2>&1; then
+              echo "FAIL: $f"
+              status=1
+            else
+              echo "OK: $f"
+            fi
+          done < <(find . -name '*.json' -not -path './.git/*')
+          exit $status
+
+  validate-shell:
+    name: Validate Shell Syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check shell syntax (bash -n)
+        run: |
+          status=0
+          for f in install.sh scripts/health-check.sh scripts/install-plugins.sh scripts/scaffold-project.sh; do
+            if ! bash -n "$f"; then
+              echo "FAIL: $f"
+              status=1
+            else
+              echo "OK: $f"
+            fi
+          done
+          exit $status
+
+  sanitization:
+    name: Sanitization Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for personal data patterns
+        run: |
+          patterns=(cpconnor cpeteconnor "sk-ant-" "sk-proj-" "ghp_" "hf_")
+          status=0
+          for pat in "${patterns[@]}"; do
+            if grep -r --include='*.md' --include='*.sh' --include='*.json' \
+                 --include='*.yml' --include='*.yaml' --include='*.txt' \
+                 -l "$pat" . 2>/dev/null | grep -v '.git/'; then
+              echo "FAIL: pattern '$pat' found in tracked files"
+              status=1
+            fi
+          done
+          if [ $status -eq 0 ]; then
+            echo "PASS: No personal data patterns found"
+          fi
+          exit $status
+
+  validate-manifests:
+    name: Validate Plugin Manifests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check plugin.json files have no invalid fields
+        run: |
+          status=0
+          while IFS= read -r f; do
+            for field in commands skills; do
+              if python3 -c "
+          import json, sys
+          with open('$f') as fh:
+              data = json.load(fh)
+          if '$field' in data:
+              print(f'FAIL: {\"$f\"} contains invalid field \"$field\"')
+              sys.exit(1)
+          "; then
+                :
+              else
+                status=1
+              fi
+            done
+            echo "OK: $f"
+          done < <(find . -name 'plugin.json' -not -path './.git/*')
+          exit $status
