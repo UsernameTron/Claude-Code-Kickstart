@@ -4,13 +4,12 @@
 None — awaiting instructions.
 
 ## Completed This Session
-- [2026-03-21] Full top-to-bottom validation and hardening (8 phases, agent-teams parallel execution)
-- [2026-03-21] Created 5 test suites: test_install.sh (37), test_health_check.sh (25), test_scaffold.sh (19), test_install_plugins.sh (37), test_integration.sh (28)
-- [2026-03-21] Sanitization audit — 12 patterns, 0 real leaks
-- [2026-03-21] Fixed test_install_plugins.sh Section 4b (plugin structure validation)
-- [2026-03-21] Fixed build plan sanitization (removed literal username from example grep commands)
-- [2026-03-21] Updated CLAUDE.md, README.md, DEVOPS-HANDOFF.md with test counts and file counts
-- [2026-03-21] Committed, merged to main, pushed to origin, cleaned branches
+- [2026-03-22] Resync from source projects: 3 fixes
+- [2026-03-22] Fix 1: plugin.json paths in claude-mcp-ecosystem (./→../ for commands and skills)
+- [2026-03-22] Fix 2: Copied DEVOPS-HANDOFF.md from claude-code-factory source (clean, no sanitization needed)
+- [2026-03-22] Fix 3: Copied and sanitized DEVOPS-HANDOFF.md from Claude MCP Ecosystem source (Pete Connor→[YOUR NAME], ISPN→generic)
+- [2026-03-22] Sanitization check: zero leaks
+- [2026-03-22] Committed, merged to main, pushed to origin, cleaned branch
 
 ## Backlog
 <!-- Future tasks go here -->
@@ -23,7 +22,7 @@ None — awaiting instructions.
 
 ## Session Handoff
 - **Branch:** `main` — clean, up to date with `origin/main`
-- **Last commit:** `c5389c0` — feat: add 5 test suites with 146 assertions for full validation
+- **Last commit:** `340b05a` — fix: resync plugin paths and add DEVOPS-HANDOFF docs from source projects
 - **State:** All work committed and pushed. No open branches. No blockers.
 - **Test status:** 5 suites, 146/146 assertions passing
-- **Next steps:** Repo is hardened and validated. Consider: automating file count sync (tech debt), adding CI to run test suites on PR, publishing to registry.
+- **Next steps:** File count in CLAUDE.md/README.md now 208 (was 206) — update if desired. Consider CI pipeline, publishing to registry.
