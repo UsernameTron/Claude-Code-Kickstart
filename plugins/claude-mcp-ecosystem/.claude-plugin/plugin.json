@@ -3,6 +3,6 @@
   "description": "Project agent ecosystem — set up, manage, and diagnose specialist agents, plus structured workspace commands (/prime, /plan, /build, /status, /wrap)",
   "version": "2.0.0",
   "author": { "name": "[YOUR NAME]" },
-  "commands": "./commands/",
-  "skills": "./skills/"
+  "commands": "../commands/",
+  "skills": "../skills/"
 }
