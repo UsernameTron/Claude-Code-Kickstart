@@ -67,12 +67,16 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check for personal data patterns
         run: |
+          # These files legitimately contain patterns as test data or scanning rules
+          EXCLUDE="tests/|.github/workflows/ci.yml|templates/global/settings-hooks.json"
           patterns=(cpconnor cpeteconnor "sk-ant-" "sk-proj-" "ghp_" "hf_")
           status=0
           for pat in "${patterns[@]}"; do
-            if grep -r --include='*.md' --include='*.sh' --include='*.json' \
+            hits=$(grep -r --include='*.md' --include='*.sh' --include='*.json' \
                  --include='*.yml' --include='*.yaml' --include='*.txt' \
-                 -l "$pat" . 2>/dev/null | grep -v '.git/'; then
+                 -l "$pat" . 2>/dev/null | grep -v '.git/' | grep -Ev "$EXCLUDE" || true)
+            if [ -n "$hits" ]; then
+              echo "$hits"
               echo "FAIL: pattern '$pat' found in tracked files"
               status=1
             fi
