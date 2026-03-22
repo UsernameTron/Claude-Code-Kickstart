@@ -51,7 +51,7 @@ Run all: `for f in tests/test_*.sh; do bash "$f"; done`
 ## Current Status
 
 - **Version:** 1.0.0
-- **Files:** 206
+- **Files:** 210
 - **Tests:** 5 suites, 146 assertions
-- **Last updated:** 2026-03-21
-- **Docs:** README.md, docs/DEVOPS-HANDOFF.md, docs/architecture.md, docs/getting-started.md, docs/troubleshooting.md, docs/customization.md
+- **Last updated:** 2026-03-22
+- **Docs:** README.md, docs/DEVOPS-HANDOFF.md, docs/architecture.md, docs/getting-started.md, docs/troubleshooting.md, docs/customization.md, docs/user-guide.md, docs/command-reference.md

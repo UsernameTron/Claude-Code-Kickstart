@@ -195,6 +195,8 @@ See [docs/customization.md](docs/customization.md) for details.
 | [docs/customization.md](docs/customization.md) | How to adjust thresholds, hooks, etc. |
 | [docs/architecture.md](docs/architecture.md) | How the three agent systems compose |
 | [docs/DEVOPS-HANDOFF.md](docs/DEVOPS-HANDOFF.md) | DevOps handoff: install, config, security, tech debt |
+| [docs/user-guide.md](docs/user-guide.md) | Beginner's guide: all 45 commands, scenarios, decision trees |
+| [docs/command-reference.md](docs/command-reference.md) | Quick-reference table of all slash commands |
 
 ---
 
