@@ -4,17 +4,16 @@
 None — awaiting instructions.
 
 ## Completed This Session
-- [2026-03-22] 9-step shipping validation — all green (146/146 tests, 9 JSON, 4 shell, 0 leaks, plugins valid)
-- [2026-03-22] Architecture visualization — 2 Mermaid diagrams (lifecycle flowchart + TDD sequence)
-- [2026-03-22] Beginner's user guide — docs/user-guide.md (687 lines, 45 commands, 7 scenarios)
-- [2026-03-22] All committed, merged to main, pushed, branches cleaned
+- [2026-03-22] Final shipping validation — all 8 checks green, scorecard printed
+- [2026-03-22] Updated file counts (210) in CLAUDE.md + README.md doc listings
+- [2026-03-22] All committed, merged to main, pushed
 
 ## Backlog
-- [ ] Update file counts in CLAUDE.md/README.md (now ~209 after user-guide.md)
 - [ ] CI pipeline to run test suites on PRs
 - [ ] Publish to registry / marketplace
 
 ## Done
+- [2026-03-22] Final shipping validation + file count sync (v1.0.0 release-ready)
 - [2026-03-22] Full shipping validation + architecture viz + user guide
 - [2026-03-22] Resync from source projects (plugin.json, DEVOPS-HANDOFF, command-reference)
 - [2026-03-21] Full top-to-bottom validation and hardening (8 phases, agent-teams parallel execution)
@@ -23,7 +22,7 @@ None — awaiting instructions.
 
 ## Session Handoff
 - **Branch:** `main` — clean, up to date with `origin/main`
-- **State:** All work committed and pushed. No open branches. No blockers.
-- **Test status:** 5 suites, 146/146 assertions passing
-- **Docs:** 7 docs total (README, DEVOPS-HANDOFF, architecture, getting-started, troubleshooting, customization, user-guide, command-reference)
-- **Next steps:** File count drift (~209 vs documented 206). CI pipeline. Registry publishing.
+- **Commit:** `0e2ed8d`
+- **State:** v1.0.0 release-ready. All 8 validation checks green. 210 files, 146/146 tests.
+- **Docs:** 8 docs (README, DEVOPS-HANDOFF, architecture, getting-started, troubleshooting, customization, user-guide, command-reference)
+- **Next steps:** CI pipeline for automated test runs on PRs. Registry/marketplace publishing.
