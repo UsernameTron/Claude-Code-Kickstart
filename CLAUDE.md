@@ -36,12 +36,22 @@ This is a distribution repo — not an application. No test suite, no build step
 
 ## Testing
 
-No automated tests — this is a configuration/documentation distribution.
-Validation via `scripts/health-check.sh` after install.
+5 test suites with 146 total assertions:
+
+| Test | Assertions | What It Validates |
+|------|-----------|-------------------|
+| `tests/test_install.sh` | 37 | Installer logic: paths, sanitization, JSON merging, sed replacement |
+| `tests/test_health_check.sh` | 25 | Health check against 3 mock environments (empty, full, partial) |
+| `tests/test_scaffold.sh` | 19 | Scaffold: directories, templates, git initialization |
+| `tests/test_install_plugins.sh` | 37 | Plugin script: names, community refs, local engines, error handling |
+| `tests/test_integration.sh` | 28 | End-to-end: scaffold + verify structure, content, sanitization, idempotency |
+
+Run all: `for f in tests/test_*.sh; do bash "$f"; done`
 
 ## Current Status
 
 - **Version:** 1.0.0
-- **Files:** ~198
+- **Files:** 206
+- **Tests:** 5 suites, 146 assertions
 - **Last updated:** 2026-03-21
 - **Docs:** README.md, docs/DEVOPS-HANDOFF.md, docs/architecture.md, docs/getting-started.md, docs/troubleshooting.md, docs/customization.md

@@ -20,8 +20,8 @@ The framework packages two custom plugin engines (MCP Ecosystem for agent lifecy
 |-----------|-------|
 | Version | 1.0.0 |
 | Branch | `main` |
-| Files | ~198 |
-| Test suite | None (configuration distribution — validated via `health-check.sh`) |
+| Files | 206 |
+| Test suites | 5 suites, 146 assertions (`tests/test_*.sh`) |
 | Known issues | None |
 | CI/CD | Not applicable |
 
@@ -159,7 +159,7 @@ claude            # SessionStart hook auto-scans
 | Plugin engines | Complete | MCP Ecosystem (7 skills, 6 agents) + Code Factory (38 skills, 10 agents) |
 | Hook enforcement | Complete | 10 hooks covering session lifecycle, commits, security |
 | CI/CD pipeline | Not applicable | Distribution repo, not an application |
-| Automated tests | Not applicable | Validated via `health-check.sh` post-install |
+| Automated tests | Complete | 5 suites, 146 assertions covering install, health check, scaffold, plugins, integration |
 | Versioning | Manual | Version tracked in CLAUDE.md, README.md, and this file |
 
 ---

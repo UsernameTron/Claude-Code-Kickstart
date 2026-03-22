@@ -30,6 +30,7 @@ Claude Code Kickstart installs a complete governance framework that **automatica
 - **45 skills** for everything from TDD enforcement to CI/CD generation
 - **16 specialist agents** across both engines
 - **6 reference documents** loaded on demand
+- **5 test suites** with 146 assertions validating install, scaffold, health check, plugins, and integration
 - **Project templates** so every new project starts with the right structure
 
 One install. Zero discipline required from you.
