@@ -1,6 +1,8 @@
 # Claude Code Kickstart
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/UsernameTron/Claude-Code-Kickstart/actions/workflows/ci.yml/badge.svg)](https://github.com/UsernameTron/Claude-Code-Kickstart/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/UsernameTron/Claude-Code-Kickstart)](https://github.com/UsernameTron/Claude-Code-Kickstart/releases/latest)
 
 **The governance framework for vibecoders** — describe what you want, the system handles engineering discipline.
 
