@@ -204,11 +204,10 @@ See [docs/customization.md](docs/customization.md) for details.
 
 ## Credits
 
-Built by [YOUR NAME].
+Built by C. Pete Connor.
 
 Published: *Crushin' Claude* — a guide to AI productivity.
 
-Portfolio: [YOUR PORTFOLIO URL]
 
 ---
 
